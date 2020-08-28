@@ -1,6 +1,6 @@
 # kube-sentinel
 
-Let's setup kube cluster monitorig, alerting and logging over #kubernetes cluster provided by [Civo](https://www.civo.com/) team.
+Let's setup kube cluster monitorig, alerting and logging over #kubernetes cluster provided by [Civo](https://www.civo.com/) team.   
 Join the #Kube100 beta by #Civo to get free credit to test-drive the world’s first k3s-powered, managed Kubernetes service
 
 
@@ -17,10 +17,10 @@ Join the #Kube100 beta by #Civo to get free credit to test-drive the world’s f
 
 ## install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
->$ sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
->$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
->$ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
->$ sudo apt-get update
+>$ sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2  
+>$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -  
+>$ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list  
+>$ sudo apt-get update  
 >$ sudo apt-get install -y kubectl
 
 
@@ -33,18 +33,18 @@ Server Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.6+k3s1", G
 
 ## install [Helm](https://helm.sh/docs/intro/install/)
 
-$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-$ chmod 700 get_helm.sh
-$ ./get_helm.sh
+>$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3  
+>$ chmod 700 get_helm.sh  
+>$ ./get_helm.sh 
 
 
 ## verify helm installation and version
 
->$ helm version
+>$ helm version   
 `version.BuildInfo{Version:"v3.3.0", GitCommit:"8a4aeec08d67a7b84472007529e8097ec3742105", GitTreeState:"dirty", GoVersion:"go1.14.7"}`
 
 
 ## add kube config 
 
-Download kube config file from Civo dashboard and save it as ~/.kube/config
+Download kube config file from Civo dashboard and save it as _~/.kube/config_ -
 ![alt text](https://github.com/yashx1/kube-sentinel/raw/master/civo-dashboard.png "civo dashboard")
