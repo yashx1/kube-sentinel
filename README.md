@@ -9,6 +9,19 @@ Join the #Kube100 beta by #Civo to get free credit to test-drive the world’s f
 **Kube cluster :** 3 node cluster by [Civo](https://www.civo.com/)
 
 
+## install docker
+
+>$ curl -fsSL https://get.docker.com -o get-docker.sh  
+>$ sudo sh get-docker.sh  
+>$ sudo usermod -aG docker $USER
+
+
+## verify docker version
+
+>$ docker --version  
+`Docker version 19.03.12, build 48a66213fe`
+
+
 ## checkout kube-sentinel :
 
 >$ git clone https://github.com/yashx1/kube-sentinel.git  
@@ -51,7 +64,7 @@ Download kube config file from Civo dashboard and save it as _~/.kube/config_ -
 
 
 ## install prometheus-node-exporter
->$ helm install prometheus-node-exporter --generate-name
+>$ helm install '<NAMESPACE>' prometheus-node-exporter 
 
 ## run prometheus-node-exporter
 
@@ -66,3 +79,8 @@ Get the application URL by running these commands:
 open http://127.0.0.1:9100/metrics in your browser :
 
 ![alt text](https://github.com/yashx1/kube-sentinel/blob/master/node_exporter%20metrics.png "node_exporter metrics.png")
+
+
+## install kube-state-metrics
+
+>$ helm install <NAMESPACE> kube-state-metrics
