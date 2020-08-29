@@ -8,7 +8,11 @@ Join the #Kube100 beta by #Civo to get free credit to test-drive the world’s f
 
 **Kube cluster :** 3 node cluster by [Civo](https://www.civo.com/)
 
-
+## create and change default namespace 
+>$ kubectl create namespace <NAMESPACE>  
+>$ kubectl config set-context --current --namespace=<NAMESPACE>
+  
+  
 ## install docker
 
 >$ curl -fsSL https://get.docker.com -o get-docker.sh  
@@ -64,13 +68,13 @@ Download kube config file from Civo dashboard and save it as _~/.kube/config_ -
 
 
 ## install prometheus-node-exporter
->$ helm install '<NAMESPACE>' prometheus-node-exporter 
+>$ helm install <NAME-SPACE> prometheus-node-exporter 
 
 ## run prometheus-node-exporter
 
 Get the application URL by running these commands:
 
->$ export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus-node-exporter,release=prometheus-node-exporter-1598717583" -o jsonpath="{.items[0].metadata.name}")  
+>$ export POD_NAME=$(kubectl get pods --namespace <NAMESPACE> -l "app=prometheus-node-exporter,release=<NAME-SPACE>" -o jsonpath="{.items[0].metadata.name}")  
 >$ kubectl port-forward --namespace default $POD_NAME 9100
 
 
