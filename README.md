@@ -48,3 +48,21 @@ Server Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.6+k3s1", G
 
 Download kube config file from Civo dashboard and save it as _~/.kube/config_ -
 ![alt text](https://github.com/yashx1/kube-sentinel/raw/master/civo-dashboard.png "civo dashboard")
+
+
+## install prometheus-node-exporter
+>$ helm install prometheus-node-exporter --generate-name
+
+## run prometheus-node-exporter
+
+Get the application URL by running these commands:
+
+>$ export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus-node-exporter,release=prometheus-node-exporter-1598717583" -o jsonpath="{.items[0].metadata.name}")  
+>$ kubectl port-forward --namespace default $POD_NAME 9100
+
+
+## verify prometheus-node-exporter is running
+
+open http://127.0.0.1:9100/metrics in your browser :
+
+![alt text](https://github.com/yashx1/kube-sentinel/blob/master/node_exporter%20metrics.png "node_exporter metrics.png")
